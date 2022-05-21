@@ -29,11 +29,12 @@ const UserList = ({navigation}) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View>
       {loading ? (
         <Text>Loading..</Text>
       ) : (
         <FlatList
+          contentContainerStyle={styles.container}
           data={users}
           renderItem={({item}) => {
             return (
