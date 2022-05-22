@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {View, Text, FlatList} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {Button} from 'react-native-elements';
@@ -34,11 +35,15 @@ const PostList = ({navigation}) => {
       ) : (
         <FlatList
           data={posts.slice(0, 20)}
-          contentContainerStyle={styles.container}
-          style={styles.button}
+          container={styles.container}
           renderItem={({item}) => {
             return (
-              <Button title={item.title} onPress={() => goToDetail(item.id)} />
+              <Button
+                title={item.title}
+                onPress={() => goToDetail(item.id)}
+                titleStyle={{fontSize: 20}}
+                buttonStyle={styles.button}
+              />
             );
           }}
         />

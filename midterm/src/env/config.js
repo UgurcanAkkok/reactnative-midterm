@@ -4,6 +4,7 @@ export const API_URL = 'https://jsonplaceholder.typicode.com/';
 export const styles = StyleSheet.create({
   text: {
     fontSize: 14,
+    textAlignVertical: 'center',
     color: 'black',
   },
   container: {
@@ -11,10 +12,11 @@ export const styles = StyleSheet.create({
     flexDirection: 'column',
     flexBasis: '90%',
     alignSelf: 'center',
-    alignContent: 'space-around',
+    alignItems: 'center',
     color: '#fff',
   },
   button: {
     color: 'red',
+    backgroundColor: 'red',
   },
 });

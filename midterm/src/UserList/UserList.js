@@ -35,11 +35,11 @@ const UserList = ({navigation}) => {
       ) : (
         <FlatList
           contentContainerStyle={styles.container}
-          style={styles.button}
           data={users}
           renderItem={({item}) => {
             return (
               <Button
+                buttonStyle={styles.button}
                 title={item.name + ', ' + item.username}
                 onPress={() => goToDetail(item.id)}
               />

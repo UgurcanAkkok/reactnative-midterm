@@ -11,8 +11,16 @@ const App = () => {
     <>
       <NavigationContainer>
         <Tab.Navigator>
-          <Tab.Screen name="PostListStack" component={PostListStack} />
-          <Tab.Screen name="UserListStack" component={UserListStack} />
+          <Tab.Screen
+            name="PostListStack"
+            options={{title: 'Posts'}}
+            component={PostListStack}
+          />
+          <Tab.Screen
+            name="UserListStack"
+            options={{title: 'Users'}}
+            component={UserListStack}
+          />
         </Tab.Navigator>
       </NavigationContainer>
     </>

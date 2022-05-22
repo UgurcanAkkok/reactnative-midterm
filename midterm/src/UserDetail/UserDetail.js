@@ -29,12 +29,15 @@ const UserDetail = ({route, navigation}) => {
           <Text style={styles.text}>Loading..</Text>
         ) : (
           <ListItem containerStyle={[styles.container, {flexBasis: '50%'}]}>
-            <ListItem.Title
+            <Text
               style={[
                 styles.text,
-                {flex: 2, fontSize: 20, fontWeight: 'bold'},
+                {flex: 3, fontSize: 30, fontWeight: 'bold'},
               ]}>
               Username: {user.username}
+            </Text>
+            <ListItem.Title style={[styles.text, {flex: 1}]}>
+              Company: {user.company.name}
             </ListItem.Title>
             <ListItem.Title style={[styles.text, {flex: 1}]}>
               Email: {user.email}
@@ -44,9 +47,6 @@ const UserDetail = ({route, navigation}) => {
             </ListItem.Title>
             <ListItem.Title style={[styles.text, {flex: 1}]}>
               Website: {user.website}
-            </ListItem.Title>
-            <ListItem.Title style={[styles.text, {flex: 1}]}>
-              Company: {user.company.name}
             </ListItem.Title>
           </ListItem>
         )}
