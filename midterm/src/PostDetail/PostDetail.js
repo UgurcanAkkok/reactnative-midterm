@@ -9,7 +9,7 @@ const PostDetail = ({route, navigator}) => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     getPost(postId);
-  }, []);
+  }, [postId]);
 
   const getPost = id => {
     fetch(API_URL + 'posts/' + id)
