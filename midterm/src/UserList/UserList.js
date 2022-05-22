@@ -1,8 +1,8 @@
-import {View, Text, FlatList} from 'react-native';
-import React, {useEffect, useState} from 'react';
-import {Button, Card, ListItem} from 'react-native-elements';
-import {API_URL, styles} from '../env/config';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import React, {useEffect, useState} from 'react';
+import {FlatList, Text, View} from 'react-native';
+import {Button} from 'react-native-elements';
+import {API_URL, styles} from '../env/config';
 import UserDetail from '../UserDetail/UserDetail';
 
 const Stack = createNativeStackNavigator();
@@ -35,12 +35,12 @@ const UserList = ({navigation}) => {
       ) : (
         <FlatList
           contentContainerStyle={styles.container}
+          style={styles.button}
           data={users}
           renderItem={({item}) => {
             return (
               <Button
                 title={item.name + ', ' + item.username}
-                style={styles.button}
                 onPress={() => goToDetail(item.id)}
               />
             );

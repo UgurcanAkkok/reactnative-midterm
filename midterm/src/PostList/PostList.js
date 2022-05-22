@@ -1,6 +1,6 @@
-import {View, Text, ScrollView, FlatList, Pressable} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 import React, {useEffect, useState} from 'react';
-import {Button, Card} from 'react-native-elements';
+import {Button} from 'react-native-elements';
 import {API_URL, styles} from '../env/config';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import PostDetail from '../PostDetail/PostDetail';
@@ -29,26 +29,21 @@ const PostList = ({navigation}) => {
 
   return (
     <View>
-
       {loading ? (
-        <Text>Loading...</Text>
+        <Text style={styles.text}>Loading...</Text>
       ) : (
         <FlatList
           data={posts.slice(0, 20)}
           contentContainerStyle={styles.container}
+          style={styles.button}
           renderItem={({item}) => {
             return (
-              <Button
-                title={item.title}
-                style={styles.button}
-                onPress={() => goToDetail(item.id)}
-              />
+              <Button title={item.title} onPress={() => goToDetail(item.id)} />
             );
           }}
         />
       )}
     </View>
-
   );
 };
 

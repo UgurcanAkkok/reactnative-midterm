@@ -9,11 +9,12 @@ export const styles = StyleSheet.create({
   container: {
     justifyContent: 'space-between',
     flexDirection: 'column',
+    flexBasis: '90%',
     alignSelf: 'center',
     alignContent: 'space-around',
-    backgroundColor: '#fff',
+    color: '#fff',
   },
   button: {
-    color: "red",
+    color: 'red',
   },
 });
