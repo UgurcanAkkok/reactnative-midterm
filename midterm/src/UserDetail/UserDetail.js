@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {View, Text} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {Card, ListItem} from 'react-native-elements';
@@ -28,7 +29,11 @@ const UserDetail = ({route, navigation}) => {
           <Text style={styles.text}>Loading..</Text>
         ) : (
           <ListItem containerStyle={[styles.container, {flexBasis: '50%'}]}>
-            <ListItem.Title style={[styles.text, {flex: 2, fontSize: 20, fontWeight: 'bold'}]}>
+            <ListItem.Title
+              style={[
+                styles.text,
+                {flex: 2, fontSize: 20, fontWeight: 'bold'},
+              ]}>
               Username: {user.username}
             </ListItem.Title>
             <ListItem.Title style={[styles.text, {flex: 1}]}>
