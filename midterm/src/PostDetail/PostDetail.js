@@ -1,9 +1,9 @@
 import {View, Text} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {API_URL, styles} from '../env/config';
-import {Card} from 'react-native-elements';
+import {Button, Card} from 'react-native-elements';
 
-const PostDetail = ({route, navigator}) => {
+const PostDetail = ({route, navigation}) => {
   const postId = route.params.postId;
   const [post, setPost] = useState({});
   const [loading, setLoading] = useState(true);
@@ -19,6 +19,9 @@ const PostDetail = ({route, navigator}) => {
         setLoading(false);
       });
   };
+  const goToComment = id => {
+    navigation.push('Comments', {postId: id});
+  };
   return (
     <View>
       {loading ? (
@@ -27,7 +30,11 @@ const PostDetail = ({route, navigator}) => {
         <Card>
           <Card.Title h4={true}>{post.title}</Card.Title>
           <Card.Divider />
-          <Text style={styles.text}>{post.body}</Text>
+          <Button
+            buttonStyle={styles.button}
+            title={post.body}
+            onPress={() => goToComment(postId)}
+          />
         </Card>
       )}
     </View>

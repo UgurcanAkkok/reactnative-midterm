@@ -5,6 +5,7 @@ import {Button} from 'react-native-elements';
 import {API_URL, styles} from '../env/config';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import PostDetail from '../PostDetail/PostDetail';
+import Comments from '../Comments/Comments';
 
 const Stack = createNativeStackNavigator();
 
@@ -57,6 +58,7 @@ const PostListStack = () => {
     <Stack.Navigator>
       <Stack.Screen name="PostList" component={PostList} />
       <Stack.Screen name="PostDetail" component={PostDetail} />
+      <Stack.Screen name="Comments" component={Comments} />
     </Stack.Navigator>
   );
 };
